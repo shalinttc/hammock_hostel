@@ -83,6 +83,17 @@ a:hover{ color: color-mix(in srgb, var(--color-primary) 85%, #000); }
 .navbar-glass .navbar-toggler-icon{
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2851,51,51,0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
+.navbar-nav .nav-link{
+  color: var(--color-primary);
+  font-weight: 600;
+  transition: color .22s ease;
+}
+.navbar-nav .nav-link:hover{
+  color: var(--color-rust);
+}
+.navbar-nav .nav-link.active{
+  color: var(--color-rust);
+}
 
 .btn-primary{
   --bs-btn-bg: var(--color-primary);
@@ -95,10 +106,11 @@ a:hover{ color: color-mix(in srgb, var(--color-primary) 85%, #000); }
 }
 
 .btn-outline-primary{
-  --bs-btn-color: var(--color-primary);
-  --bs-btn-border-color: var(--color-primary);
-  --bs-btn-hover-bg: var(--color-primary);
-  --bs-btn-hover-border-color: var(--color-primary);
+  --bs-btn-bg: var(--color-rust);
+  --bs-btn-color: var(--color-cream);
+  --bs-btn-border-color: var(--color-rust);
+  --bs-btn-hover-bg: color-mix(in srgb, var(--color-rust) 85%, #000);
+  --bs-btn-hover-border-color: color-mix(in srgb, var(--color-rust) 85%, #000);
   transition: transform .22s ease, box-shadow .22s ease;
 }
 .btn-primary:hover,
