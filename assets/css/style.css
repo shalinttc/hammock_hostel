@@ -157,6 +157,22 @@ a:hover{ color: color-mix(in srgb, var(--color-primary) 85%, #000); }
   letter-spacing: -0.02em;
 }
 
+
+.logo-cluster{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.logo-chip{
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  border: 1px solid rgba(51,51,51,.14);
+  box-shadow: 0 6px 14px rgba(0,0,0,.12);
+  background: #fff;
+  object-fit: cover;
+}
+
 .hero{
   padding: 92px 0 56px;
   background:
