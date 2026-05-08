@@ -10,7 +10,10 @@
   const path = (location.pathname.split("/").pop() || "index.html").toLowerCase();
   document.querySelectorAll("[data-nav]").forEach((a) => {
     const href = (a.getAttribute("href") || "").toLowerCase();
-    if (href === path) a.classList.add("active");
+    if (href === path) {
+      a.classList.add("active");
+      a.setAttribute("aria-current", "page");
+    }
   });
 
   // Dynamic current year in footer copyright.
@@ -18,6 +21,15 @@
   document.querySelectorAll("[data-current-year]").forEach((el) => {
     el.textContent = currentYear;
   });
+
+  // Sticky mobile booking CTA for faster conversion.
+  const mobileCta = document.createElement("a");
+  mobileCta.className = "mobile-book-cta";
+  mobileCta.setAttribute("data-book-now", "");
+  mobileCta.setAttribute("href", BOOKING_URL);
+  mobileCta.setAttribute("aria-label", "Book your stay now");
+  mobileCta.textContent = "Book Now";
+  document.body.appendChild(mobileCta);
 
   // Reveal-on-scroll animations for key layout blocks.
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
