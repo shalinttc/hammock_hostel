@@ -4,6 +4,8 @@
   // Ensure any element marked as data-book-now routes correctly.
   document.querySelectorAll("[data-book-now]").forEach((el) => {
     el.setAttribute("href", BOOKING_URL);
+    el.setAttribute("target", "_blank");
+    el.setAttribute("rel", "noopener noreferrer");
   });
 
   // Mark active nav link based on current path.
