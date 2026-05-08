@@ -13,6 +13,12 @@
     if (href === path) a.classList.add("active");
   });
 
+  // Dynamic current year in footer copyright.
+  const currentYear = String(new Date().getFullYear());
+  document.querySelectorAll("[data-current-year]").forEach((el) => {
+    el.textContent = currentYear;
+  });
+
   // Reveal-on-scroll animations for key layout blocks.
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (!prefersReducedMotion) {
