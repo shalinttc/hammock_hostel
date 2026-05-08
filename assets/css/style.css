@@ -172,6 +172,26 @@ a:hover{ color: color-mix(in srgb, var(--color-primary) 85%, #000); }
   background: #fff;
   object-fit: cover;
 }
+.logo-chip{
+  animation: logoFloat 6.5s ease-in-out infinite;
+}
+.logo-chip:nth-child(2){
+  animation-delay: .6s;
+}
+.logo-chip:nth-child(3){
+  animation-delay: 1.2s;
+}
+
+.hero{
+  animation: heroFadeIn .9s ease-out both;
+}
+.hero-media{
+  animation: mediaBreath 8s ease-in-out infinite;
+}
+.hero .btn{
+  animation: buttonSoftIn .7s ease both;
+  animation-delay: .25s;
+}
 
 .hero{
   padding: 92px 0 56px;
@@ -915,6 +935,35 @@ footer .btn-primary{
   transform: translateY(0);
 }
 
+@keyframes logoFloat{
+  0%, 100%{ transform: translateY(0); }
+  50%{ transform: translateY(-5px); }
+}
+@keyframes mediaBreath{
+  0%, 100%{ transform: translateY(0); }
+  50%{ transform: translateY(-4px); }
+}
+@keyframes heroFadeIn{
+  from{
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes buttonSoftIn{
+  from{
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce){
   .brand-logo,
   .btn-primary,
@@ -925,7 +974,11 @@ footer .btn-primary{
   .icon-tile,
   .cta-band,
   .gcell img,
-  .reveal{
+  .reveal,
+  .logo-chip,
+  .hero,
+  .hero-media,
+  .hero .btn{
     transition: none !important;
     animation: none !important;
     transform: none !important;
