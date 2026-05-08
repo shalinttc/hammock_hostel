@@ -230,6 +230,19 @@ a:hover{ color: color-mix(in srgb, var(--color-primary) 85%, #000); }
 .hero-media:hover img{
   transform: scale(1.04);
 }
+.hero-icons{
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+}
+.hero-icons img{
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  display: block;
+}
 
 .card-soft{
   border-radius: var(--radius-md);
