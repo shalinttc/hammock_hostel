@@ -23,13 +23,16 @@
   });
 
   // Sticky mobile booking CTA for faster conversion.
-  const mobileCta = document.createElement("a");
-  mobileCta.className = "mobile-book-cta";
-  mobileCta.setAttribute("data-book-now", "");
-  mobileCta.setAttribute("href", BOOKING_URL);
-  mobileCta.setAttribute("aria-label", "Book your stay now");
-  mobileCta.textContent = "Book Now";
-  document.body.appendChild(mobileCta);
+  const mobileViewport = window.matchMedia("(max-width: 991.98px)");
+  if (mobileViewport.matches) {
+    const mobileCta = document.createElement("a");
+    mobileCta.className = "mobile-book-cta";
+    mobileCta.setAttribute("data-book-now", "");
+    mobileCta.setAttribute("href", BOOKING_URL);
+    mobileCta.setAttribute("aria-label", "Book your stay now");
+    mobileCta.textContent = "Book Now";
+    document.body.appendChild(mobileCta);
+  }
 
   // Reveal-on-scroll animations for key layout blocks.
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

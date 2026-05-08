@@ -58,12 +58,27 @@ a:hover{ color: color-mix(in srgb, var(--color-primary) 85%, #000); }
 }
 
 .brand-logo{
-  height: 34px;
+  height: 44px;
   width: auto;
   transition: transform .35s ease;
 }
+.navbar-brand{
+  background: rgba(255,255,255,.96);
+  border: 1px solid rgba(51,51,51,.12);
+  border-radius: 12px;
+  padding: 6px 12px;
+  box-shadow: 0 8px 18px rgba(0,0,0,.10);
+}
 .brand-logo:hover{
   transform: translateY(-1px) scale(1.02);
+}
+@media (max-width: 575.98px){
+  .brand-logo{
+    height: 38px;
+  }
+  .navbar-brand{
+    padding: 5px 10px;
+  }
 }
 
 .navbar{
@@ -228,6 +243,10 @@ a:hover{ color: color-mix(in srgb, var(--color-primary) 85%, #000); }
   background: linear-gradient(135deg, rgba(29,125,143,.16), rgba(230,164,82,.14));
   border: 1px solid rgba(51,51,51,.08);
   overflow: hidden;
+}
+.hero-media picture{
+  display: block;
+  height: 100%;
 }
 .hero-media img{
   width: 100%;
@@ -741,6 +760,19 @@ a:hover{ color: color-mix(in srgb, var(--color-primary) 85%, #000); }
   }
   body{
     padding-bottom: 82px;
+  }
+}
+@media (max-width: 575.98px){
+  .mobile-book-cta{
+    left: 10px;
+    right: 10px;
+    bottom: calc(10px + env(safe-area-inset-bottom));
+    padding: 11px 12px;
+    font-size: .97rem;
+    border-radius: 10px;
+  }
+  body{
+    padding-bottom: 78px;
   }
 }
 

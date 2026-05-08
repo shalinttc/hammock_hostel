@@ -19,6 +19,7 @@
     <meta name="twitter:title" content="Hammock Hostels | Backpacker Hostel in India" />
     <meta name="twitter:description" content="Stay at Hammock Hostels in India for clean rooms, social spaces, fast Wi-Fi, and a vibrant backpacker community in Jaipur and Mumbai." />
     <meta name="twitter:image" content="https://hammockhostels.com/assets/logo/hammock-logo-without-letter.png" />
+    <link rel="preload" as="image" href="assets/images/hammock-01.webp" type="image/webp" />
 
 
     <link rel="icon" href="assets/logo/hammock-logo-without-letter.png" />
@@ -72,7 +73,10 @@
           </div>
           <div class="col-lg-6">
             <div class="hero-media">
-              <img loading="lazy" decoding="async" src="assets/images/hammock-01.jpg" alt="Hammock Hostels lifestyle" />
+              <picture>
+                <source srcset="assets/images/hammock-01.webp" type="image/webp" />
+                <img loading="eager" fetchpriority="high" decoding="async" src="assets/images/hammock-01.jpg" alt="Hammock Hostels lifestyle" />
+              </picture>
             </div>
             <div class="hero-icons">
               <img loading="lazy" decoding="async" src="assets/icons/logo-pack/Asset_11-94598e03-cb6a-4541-b129-468616b7a096.png" alt="" aria-hidden="true" />
