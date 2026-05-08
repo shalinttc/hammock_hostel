@@ -861,6 +861,41 @@ footer .btn-primary{
   box-shadow: 0 16px 28px rgba(0,0,0,.14);
 }
 
+/* Enhanced FAQ UI (About page) */
+.faq-accordion .accordion-item{
+  border: 1px solid color-mix(in srgb, var(--color-primary) 20%, #fff);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,.05);
+}
+.faq-accordion .accordion-item + .accordion-item{
+  margin-top: 12px;
+}
+.faq-accordion .accordion-button{
+  font-weight: 600;
+  color: var(--color-charcoal);
+  background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(229,225,219,.28));
+  padding: 16px 18px;
+}
+.faq-accordion .accordion-button:not(.collapsed){
+  color: var(--color-primary);
+  background: linear-gradient(180deg, rgba(29,125,143,.10), rgba(29,125,143,.04));
+  box-shadow: inset 0 -1px 0 rgba(29,125,143,.18);
+}
+.faq-accordion .accordion-button:focus{
+  box-shadow: 0 0 0 .2rem rgba(29,125,143,.18);
+}
+.faq-accordion .accordion-button::after{
+  background-size: 1rem;
+  opacity: .9;
+}
+.faq-accordion .accordion-body{
+  padding: 16px 18px 18px;
+  color: rgba(51,51,51,.86);
+  line-height: 1.65;
+}
+
 @media (max-width: 991.98px){
   .creative-gallery{ column-count: 2; }
 }
