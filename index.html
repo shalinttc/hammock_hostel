@@ -129,70 +129,88 @@
 
     <section class="section">
       <div class="container">
-        <div class="d-flex align-items-end justify-content-between gap-3 mb-4">
-          <div class="section-heading">
-            <div class="section-kicker">Featured properties</div>
-            <h2 class="h1 fw-bold mb-0">Pick your next hammock.</h2>
-          </div>
-          <a class="btn btn-outline-primary d-none d-md-inline-flex" href="properties.html">View all</a>
+        <div class="section-heading mb-4">
+          <div class="section-kicker">Hostel rooms</div>
+          <h2 class="h1 fw-bold mb-0">Pick your next hammock.</h2>
         </div>
-        <div class="row g-4">
-          <div class="col-lg-4 col-md-6">
-            <article class="card card-soft featured-room-card h-100">
-              <div class="property-thumb featured-room-media">
-                <img loading="lazy" decoding="async" src="assets/images/hammock-12.webp" alt="Hammock Hostels Jaipur" />
-              </div>
-              <div class="card-body p-4 d-flex flex-column">
-                <div class="d-flex justify-content-between align-items-start gap-3 mb-2">
-                  <span class="badge rounded-pill text-bg-light border">Jaipur</span>
+        <!--
+          FEATURED ROOM CARD (template)
+          Duplicate a .room-slide block inside .room-track to add more room types.
+          Update: image, title, meta line, and booking link.
+        -->
+        <div class="room-slider" data-room-slider>
+          <div class="room-track">
+            <div class="room-slide">
+              <article class="card card-soft featured-room-card h-100">
+                <div class="property-thumb featured-room-media">
+                  <img loading="lazy" decoding="async" src="assets/images/hammock-03.webp" alt="Bed in 6-Bed Mixed Dorm at Hammock Hostels" />
                 </div>
-                <h3 class="h4 fw-bold mb-2">Hammock Hostels Jaipur</h3>
-                <p class="text-muted mb-3">Community-first stay with cozy beds and social spaces.</p>
-                <div class="mt-auto d-flex gap-2">
-                  <a class="featured-room-link" href="jaipur.html">See property</a>
-                  <a class="btn btn-outline-primary btn-sm ms-auto" data-book-now href="https://live.ipms247.com/booking/book-rooms-hammockhostels">Book Now</a>
+                <div class="card-body p-4 d-flex flex-column">
+                  <h3 class="h4 fw-bold mb-2">Bed in 6-Bed Mixed Dorm</h3>
+                  <p class="featured-room-meta text-muted mb-3">6 sleeps · 1 bunk bed · shared bathroom</p>
+                  <div class="mt-auto">
+                    <a class="featured-room-link" data-book-now href="https://live.ipms247.com/booking/book-rooms-hammockhostels">Book room</a>
+                  </div>
                 </div>
-              </div>
-            </article>
+              </article>
+            </div>
+            <div class="room-slide">
+              <article class="card card-soft featured-room-card h-100">
+                <div class="property-thumb featured-room-media">
+                  <img loading="lazy" decoding="async" src="assets/images/hammock-16.webp" alt="Bed in 4-Bed Female Dorm at Hammock Hostels" />
+                </div>
+                <div class="card-body p-4 d-flex flex-column">
+                  <h3 class="h4 fw-bold mb-2">Bed in 4-Bed Female Dorm</h3>
+                  <p class="featured-room-meta text-muted mb-3">4 sleeps · 1 bunk bed · female-only dorm</p>
+                  <div class="mt-auto">
+                    <a class="featured-room-link" data-book-now href="https://live.ipms247.com/booking/book-rooms-hammockhostels">Book room</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="room-slide">
+              <article class="card card-soft featured-room-card h-100">
+                <div class="property-thumb featured-room-media">
+                  <img loading="lazy" decoding="async" src="assets/images/hammock-17.webp" alt="Double Room with Private Bathroom at Hammock Hostels" />
+                </div>
+                <div class="card-body p-4 d-flex flex-column">
+                  <h3 class="h4 fw-bold mb-2">Double Room with Private Bathroom</h3>
+                  <p class="featured-room-meta text-muted mb-3">2 sleeps · 1 double bed · private bathroom</p>
+                  <div class="mt-auto">
+                    <a class="featured-room-link" data-book-now href="https://live.ipms247.com/booking/book-rooms-hammockhostels">Book room</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="room-slide">
+              <article class="card card-soft featured-room-card h-100">
+                <div class="property-thumb featured-room-media">
+                  <img loading="lazy" decoding="async" src="assets/images/hammock-04.webp" alt="Bed in 8-Bed Mixed Dorm at Hammock Hostels" />
+                </div>
+                <div class="card-body p-4 d-flex flex-column">
+                  <h3 class="h4 fw-bold mb-2">Bed in 8-Bed Mixed Dorm</h3>
+                  <p class="featured-room-meta text-muted mb-3">8 sleeps · 2 bunk beds · shared bathroom</p>
+                  <div class="mt-auto">
+                    <a class="featured-room-link" data-book-now href="https://live.ipms247.com/booking/book-rooms-hammockhostels">Book room</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="room-slide">
+              <article class="card card-soft featured-room-card h-100">
+                <div class="property-thumb featured-room-media">
+                  <img loading="lazy" decoding="async" src="assets/images/hammock-08.webp" alt="Twin Room with Shared Bathroom at Hammock Hostels" />
+                </div>
+                <div class="card-body p-4 d-flex flex-column">
+                  <h3 class="h4 fw-bold mb-2">Twin Room with Shared Bathroom</h3>
+                  <p class="featured-room-meta text-muted mb-3">2 sleeps · 2 twin beds · shared bathroom</p>
+                  <div class="mt-auto">
+                    <a class="featured-room-link" data-book-now href="https://live.ipms247.com/booking/book-rooms-hammockhostels">Book room</a>
+                  </div>
+                </div>
+              </article>
+            </div>
           </div>
-          <div class="col-lg-4 col-md-6">
-            <article class="card card-soft featured-room-card h-100">
-              <div class="property-thumb featured-room-media">
-                <img loading="lazy" decoding="async" src="assets/images/hammock-15.webp" alt="Hammock Hostels Mumbai" />
-              </div>
-              <div class="card-body p-4 d-flex flex-column">
-                <div class="d-flex justify-content-between align-items-start gap-3 mb-2">
-                  <span class="badge rounded-pill text-bg-light border">Mumbai</span>
-                </div>
-                <h3 class="h4 fw-bold mb-2">Hammock Hostels Mumbai</h3>
-                <p class="text-muted mb-3">Vibrant property close to city life, comfort, and connection.</p>
-                <div class="mt-auto d-flex gap-2">
-                  <a class="featured-room-link" href="mumbai.html">See property</a>
-                  <a class="btn btn-outline-primary btn-sm ms-auto" data-book-now href="https://live.ipms247.com/booking/book-rooms-hammockhostels">Book Now</a>
-                </div>
-              </div>
-            </article>
-          </div>
-          <div class="col-lg-4 col-md-12">
-            <article class="coming-soon-card h-100">
-              <div class="coming-soon-kicker">Coming Soon</div>
-              <h3 class="h2 fw-bold mb-3">More cities, more stories.</h3>
-              <p class="mb-3">
-                Hammock Hostels is expanding to new destinations across India.
-              </p>
-              <ul class="coming-soon-cities list-unstyled mb-4">
-                <li>Goa</li>
-                <li>Bengaluru</li>
-                <li>Rishikesh</li>
-                <li>Pune</li>
-                <li>Delhi NCR</li>
-              </ul>
-              <!-- <a class="btn btn-light px-4" data-book-now href="https://live.ipms247.com/booking/book-rooms-hammockhostels">Book Now</a> -->
-            </article>
-          </div>
-        </div>
-        <div class="d-md-none mt-4">
-          <a class="btn btn-outline-primary w-100" href="properties.html">View all our properties</a>
         </div>
       </div>
     </section>

@@ -39,9 +39,11 @@
   // Reveal-on-scroll animations for key layout blocks.
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (!prefersReducedMotion) {
-    const revealTargets = document.querySelectorAll(
-      ".section-heading, .hero-card, .hero-media, .card-soft, .icon-tile, .gcell, .cta-band"
-    );
+    const revealTargets = Array.from(
+      document.querySelectorAll(
+        ".section-heading, .hero-card, .hero-media, .card-soft, .icon-tile, .gcell, .cta-band"
+      )
+    ).filter((el) => !el.closest("[data-room-slider]"));
 
     revealTargets.forEach((el, idx) => {
       el.classList.add("reveal");
@@ -142,6 +144,80 @@
         pause = true;
       });
       ratingSlider.addEventListener("mouseleave", () => {
+        pause = false;
+      });
+    }
+  }
+
+  // Room slider (index page): show 3 room cards and slide one-by-one.
+  const roomSlider = document.querySelector("[data-room-slider]");
+  if (roomSlider) {
+    const track = roomSlider.querySelector(".room-track");
+    if (track) {
+      const baseItems = Array.from(track.children).map((node) => node.cloneNode(true));
+      let currentIndex = 0;
+      let timer = null;
+      let pause = false;
+
+      const visibleCount = () => {
+        if (window.innerWidth < 576) return 1;
+        if (window.innerWidth < 992) return 2;
+        return 3;
+      };
+
+      const getStepWidth = () => {
+        const first = track.querySelector(".room-slide");
+        if (!first) return 0;
+        const gap = parseFloat(getComputedStyle(track).gap || "0");
+        return first.getBoundingClientRect().width + gap;
+      };
+
+      const render = () => {
+        const visible = visibleCount();
+        track.innerHTML = "";
+        baseItems.forEach((item) => track.appendChild(item.cloneNode(true)));
+        baseItems.slice(0, visible).forEach((item) => track.appendChild(item.cloneNode(true)));
+        currentIndex = 0;
+        track.style.transition = "none";
+        track.style.transform = "translateX(0px)";
+      };
+
+      const moveNext = () => {
+        if (pause) return;
+        const step = getStepWidth();
+        if (!step) return;
+        currentIndex += 1;
+        track.style.transition = "transform .55s ease";
+        track.style.transform = `translateX(${-currentIndex * step}px)`;
+
+        if (currentIndex >= baseItems.length) {
+          window.setTimeout(() => {
+            currentIndex = 0;
+            track.style.transition = "none";
+            track.style.transform = "translateX(0px)";
+          }, 570);
+        }
+      };
+
+      const start = () => {
+        if (prefersReducedMotion) return;
+        if (timer) window.clearInterval(timer);
+        timer = window.setInterval(moveNext, 3200);
+      };
+
+      const initRoomSlider = () => {
+        render();
+        start();
+      };
+
+      requestAnimationFrame(() => requestAnimationFrame(initRoomSlider));
+      window.addEventListener("resize", () => {
+        initRoomSlider();
+      });
+      roomSlider.addEventListener("mouseenter", () => {
+        pause = true;
+      });
+      roomSlider.addEventListener("mouseleave", () => {
         pause = false;
       });
     }
