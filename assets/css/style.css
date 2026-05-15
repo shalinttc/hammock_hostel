@@ -580,6 +580,28 @@ a:hover{ color: color-mix(in srgb, var(--color-primary) 85%, #000); }
   font-weight: 700;
 }
 
+.testimonial-slider{
+  overflow: hidden;
+}
+.testimonial-track{
+  display: flex;
+  gap: 16px;
+  will-change: transform;
+}
+.testimonial-slide{
+  flex: 0 0 calc((100% - 32px) / 3);
+  min-width: 0;
+}
+@media (max-width: 991.98px){
+  .testimonial-slide{
+    flex: 0 0 calc((100% - 16px) / 2);
+  }
+}
+@media (max-width: 575.98px){
+  .testimonial-slide{
+    flex: 0 0 100%;
+  }
+}
 .testimonial-card{
   background: #fff;
   border: 1px solid rgba(51,51,51,.10);
