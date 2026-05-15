@@ -65,9 +65,9 @@
     revealTargets.forEach((el) => observer.observe(el));
   }
 
-  // Hero slideshow (index page): fade carousel with reduced-motion support.
-  const heroCarouselEl = document.getElementById("heroCarousel");
-  if (heroCarouselEl && window.bootstrap?.Carousel) {
+  // Hero slideshow: fade carousel with reduced-motion support.
+  document.querySelectorAll("[data-hero-carousel]").forEach((heroCarouselEl) => {
+    if (!window.bootstrap?.Carousel) return;
     const heroCarousel = window.bootstrap.Carousel.getOrCreateInstance(heroCarouselEl, {
       interval: prefersReducedMotion ? false : 5000,
       ride: prefersReducedMotion ? false : "carousel",
@@ -77,7 +77,7 @@
     if (prefersReducedMotion) {
       heroCarousel.pause();
     }
-  }
+  });
 
   // Ratings slider (index page): show 3 cards and slide one-by-one.
   const ratingSlider = document.querySelector("[data-rating-slider]");
