@@ -325,6 +325,13 @@ a:hover{ color: color-mix(in srgb, var(--color-primary) 85%, #000); }
 .home-page .hero-media-carousel:hover .carousel-item.active img{
   transform: scale(1.04);
 }
+.hero-intro p{
+  font-size: 1rem;
+  line-height: 1.65;
+}
+.hero-intro .lead{
+  font-size: 1.08rem;
+}
 .hero-icons{
   margin-top: 16px;
   display: flex;
