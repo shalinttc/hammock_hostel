@@ -694,6 +694,26 @@ a:hover{ color: color-mix(in srgb, var(--color-primary) 85%, #000); }
   line-height: 1;
 }
 
+.amenities-grid .icon-tile .d-flex > div:last-child{
+  min-width: 0;
+}
+
+@media (max-width: 575.98px){
+  .amenities-grid{
+    --bs-gutter-y: 0.75rem;
+  }
+  .amenities-grid .icon-tile{
+    padding: 14px 16px;
+  }
+  .amenities-grid .icon-tile .fw-semibold{
+    font-size: 0.95rem;
+    line-height: 1.35;
+  }
+  .amenities-grid .icon-tile .text-muted.small{
+    line-height: 1.4;
+  }
+}
+
 .cta-band{
   border-radius: var(--radius-lg);
   background:
