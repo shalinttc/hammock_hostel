@@ -43,7 +43,13 @@
       document.querySelectorAll(
         ".section-heading, .hero-card, .hero-media, .card-soft, .icon-tile, .gcell, .cta-band"
       )
-    ).filter((el) => !el.closest("[data-room-slider]"));
+    ).filter((el) => {
+      if (el.closest("[data-room-slider]")) return false;
+      // Tall policy cards rarely satisfy IntersectionObserver on mobile (content stays opacity: 0).
+      if (el.closest(".hero-inner")) return false;
+      if (el.querySelector(".policy-content")) return false;
+      return true;
+    });
 
     revealTargets.forEach((el, idx) => {
       el.classList.add("reveal");

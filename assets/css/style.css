@@ -1290,6 +1290,13 @@ footer .btn-primary{
   transform: translateY(0);
 }
 
+/* Policy pages: content must stay visible without scroll-reveal */
+.hero-inner .hero-card,
+.hero-card:has(.policy-content){
+  opacity: 1;
+  transform: none;
+}
+
 @keyframes logoFloat{
   0%, 100%{ transform: translateY(0); }
   50%{ transform: translateY(-5px); }
